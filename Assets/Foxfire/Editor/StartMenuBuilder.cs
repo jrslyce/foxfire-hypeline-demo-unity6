@@ -48,7 +48,7 @@ namespace Foxfire.Editor
             if (EditorApplication.isPlayingOrWillChangePlaymode) { Debug.LogError("Exit Play mode before creating the menu."); return; }
             if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
             var scene = EditorSceneManager.OpenScene(ScenePath, OpenSceneMode.Single);
-            if (Object.FindObjectOfType<StartMenuView>(true) != null) { Debug.Log("Editable start menu already exists."); return; }
+            if (Object.FindFirstObjectByType<StartMenuView>(FindObjectsInactive.Include) != null) { Debug.Log("Editable start menu already exists."); return; }
             font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
             var root = new GameObject("Start Menu", typeof(RectTransform), typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster), typeof(CanvasGroup), typeof(StartMenuView));
             var canvas = root.GetComponent<Canvas>();
@@ -92,7 +92,7 @@ namespace Foxfire.Editor
             portrait.uvRect = new Rect(0, 7f/32f, 1f/16f, 1f/32f); portrait.raycastTarget = false;
             Box("Portrait Caption Divider", panel, 787, 464, 277, 1, new Color(.55f,.70f,.57f,.3f));
             Label("Portrait Caption", panel, 787, 483, 280, 25, "A little courage goes a long way.", 15, new Color(.66f,.74f,.69f));
-            if (Object.FindObjectOfType<EventSystem>() == null)
+            if (Object.FindFirstObjectByType<EventSystem>() == null)
                 new GameObject("EventSystem", typeof(EventSystem), typeof(StandaloneInputModule));
             EditorSceneManager.MarkSceneDirty(scene);
             EditorSceneManager.SaveScene(scene);

@@ -78,7 +78,7 @@ public sealed class ArenaController : MonoBehaviour
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     static void Boot()
     {
-        if (FindObjectOfType<ArenaController>() == null)
+        if (FindFirstObjectByType<ArenaController>() == null)
             new GameObject("Foxfire Arena").AddComponent<ArenaController>();
     }
     void Awake()
@@ -147,7 +147,7 @@ public sealed class ArenaController : MonoBehaviour
         values.introSeconds = 0;
         Game = new Simulation(values, 1);
         Game.PlayerControlled = true;
-        startMenu = FindObjectOfType<StartMenuView>(true);
+        startMenu = FindFirstObjectByType<StartMenuView>(FindObjectsInactive.Include);
         if (startMenu != null) startMenu.SetState(this, true, false, Outcome.None);
         gateway = simulator = new LocalSimulatorGateway();
         output = Environment.GetEnvironmentVariable("FOXFIRE_STATE_DIR") ??
