@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550a70af929bc4c51bd458cbfd50c72f, type: 3}
+  m_Name: GddBaseline
+  m_EditorClassIdentifier: Assembly-CSharp::Foxfire.BalanceAsset
+  values:
+    introSeconds: 5
+    bossAt: 240
+    maxSeconds: 300
+    resultsSeconds: 10
+    foxHP: 100
+    foxSpeed: 3.6
+    foxRadius: 0.35
+    immunity: 0.6
+    attackInterval: 0.45
+    boltDamage: 10
+    boltSpeed: 12
+    attackRange: 7
+    sprigHP: 12
+    sprigSpeed: 1.7
+    sprigDamage: 6
+    boarHP: 45
+    boarSpeed: 1.1
+    boarDamage: 14
+    chargeSpeed: 5
+    chargeTell: 1
+    chargeDuration: 1
+    chargeCooldown: 4
+    wispHP: 22
+    wispSpeed: 1.2
+    wispDamage: 8
+    wispInterval: 2.5
+    wispProjectileSpeed: 3.5
+    bossHP: 650
+    bossInterval: 4
+    bossEnrageInterval: 3
+    bossProjectileSpeed: 2.8
+    bossDamage: 10
+    rootTell: 1.2
+    rootDuration: 2
+    portalTell: 0.8
+    spawnSafeDistance: 4
+    spawnRates:
+    - 0.6
+    - 0.9
+    - 1.2
+    - 1.5
+    phaseCaps: 10000000180000002000000028000000
+    enemyCap: 40
+    projectileCap: 200
+    xpCap: 80
+    vfxCap: 60
+    thresholds: 08000000140000002400000038000000500000006e000000
+    healAmount: 30
+    healExpiry: 12
+    laserDuration: 8
+    laserDPS: 45
+    starTell: 1
+    starDamage: 70
+    starRadius: 3
+    thornRadius: 2
+    thornDuration: 6
+    thornDamage: 6
+    rushDuration: 8
+    rushMultiplier: 1.25
+    actionCooldowns:
+    - 20
+    - 35
+    - 25
+    - 15
+    - 25
+    - 35
+    sessionCooldown: 5
+    dispatchInterval: 1
+    queueExpiry: 10
+    queueCap: 5
+    journalCap: 10000

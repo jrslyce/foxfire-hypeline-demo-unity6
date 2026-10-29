@@ -1,0 +1,10 @@
+{
+  "clips": [
+    { "name": "Walking", "sha256": "91c0b10f980a9b8a20b5c010530313b35f3d7e4a18a45eea7d1adafb307a711a" },
+    { "name": "Running", "sha256": "e1eef81ee20482b5ce1ccb651ca3139b6e2062ca552db507b52285e6779f0f80" },
+    { "name": "360_Power_Spin_Jump", "sha256": "7285f42a294b493ea84d1872356b54aca9448baf9cad7aa5f7aea7bc23827d31" },
+    { "name": "Charged_Ground_Slam", "sha256": "eb7d37410e64346fd11f376a95abc81daae0c3a01d10addd7135448de3606f2e" },
+    { "name": "Charged_Slash", "sha256": "66dba9cf34424405dc1b32dd18219670a543e566b4e7787ed5441f5392cc2a6e" },
+    { "name": "Dead", "sha256": "3a11bb50a0d8c6b5b760bf106138d41bacedaaf48a70650b317689193a35a790" }
+  ]
+}
