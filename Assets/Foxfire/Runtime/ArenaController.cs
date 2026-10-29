@@ -149,11 +149,7 @@ public sealed class ArenaController : MonoBehaviour
         Game.PlayerControlled = true;
         startMenu = FindObjectOfType<StartMenuView>(true);
         if (startMenu != null) startMenu.SetState(this, true, false, Outcome.None);
-        var hypelineManager = FindObjectOfType<MuxyGatewayManager>();
-        if (hypelineManager != null)
-            gateway = new HypelineGateway(hypelineManager, () => !menuOpen);
-        else
-            gateway = simulator = new LocalSimulatorGateway();
+        gateway = simulator = new LocalSimulatorGateway();
         output = Environment.GetEnvironmentVariable("FOXFIRE_STATE_DIR") ??
                  Path.Combine(Application.persistentDataPath, "operations");
         Directory.CreateDirectory(output);
