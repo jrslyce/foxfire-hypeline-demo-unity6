@@ -1114,10 +1114,10 @@ public sealed class ArenaController : MonoBehaviour
         {
             StartOrResume();
         }
-        if (!hasStarted && GUI.Button(new Rect(453, 550, 310, 60), "AI MODE", menuButton))
+        if (GUI.Button(new Rect(453, 550, 310, 60), hasStarted && !Game.PlayerControlled ? "TAKE CONTROL" : "AI MODE", menuButton))
             StartAiMode();
         GUI.backgroundColor = Color.white;
-        if (hasStarted) Text(453, 571, 290, 25, "ESC to resume", menuMuted);
+        if (hasStarted) Text(116, 616, 290, 25, "ESC to resume", menuMuted);
         Text(860, 122, 280, 22, "GUARDIAN OF THE CLEARING", menuEyebrow);
         // The same directional fox atlas used in the arena is the menu portrait.
         if (foxHero != null && foxHero.Available)
@@ -1142,11 +1142,18 @@ public sealed class ArenaController : MonoBehaviour
     }
     public void StartAiMode()
     {
-        if (hasStarted) return;
-        Game.Reset();
-        Game.PlayerControlled = false;
-        accumulator = 0;
-        hasStarted = true;
+        if (hasStarted)
+        {
+            // Switch control without resetting the current run.
+            Game.PlayerControlled = !Game.PlayerControlled;
+        }
+        else
+        {
+            Game.Reset();
+            Game.PlayerControlled = false;
+            accumulator = 0;
+            hasStarted = true;
+        }
         menuOpen = false;
         if (startMenu != null) startMenu.SetState(this, false, true, Game.Outcome);
     }
